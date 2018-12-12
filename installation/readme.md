@@ -147,5 +147,165 @@ The three important terminologies:
 Below is an example of a Kubernetes cluster
 
 <p align="center">
-  <img width=500 length=125 src='images/pic8.jpg'>
+  <img width=500 length=125 src='images/pic9.jpg'>
 </p>
+
+When it comes to SQL 2019 big data cluster, Kubernetes is responsible for not only the health but also the build and configuration of the cluster nodes and assigning 
+the pods to the nodes. These are three logical planes for a SQL 2019 big data cluster: the <b>control plane</b>, the <b>compute plane</b> and the <b>data plane</b>. 
+The <b>control plane</b> provides management and security. The master instance of SQL and master node of Kubernetes cluster is in this plane.  <b>Compute plane</b> has the SQL Server in Linux pod. This layer is 
+responsible for computation. Finally, the <b>data plane</b> is responsible for data persistence and caching. It contains the SQL data pool, and storage pool.
+
+
+## Installing AKS cluster
+
+You will be able to install the AKS cluster using either CLI or azure portal. The steps to install AKS cluster using CLI is provided. Use command prompt to execute the CLI commands.
+The detailed steps can be found [here](https://docs.microsoft.com/en-us/sql/big-data-cluster/deploy-on-aks?view=sqlallproducts-allversions)
+
+The pre-requisite steps can be skipped as they have been completed on the client machine. The cluster I created has 4 nodes and the command is as follows
+
+<table bgcolor="#A9A9A9">
+<tr>
+ <th><strong>az aks create --name kubcluster --resource-group sqlbigdatacluster --generate-ssh-keys --node-vm-size Standard_L4s --node-count 4 --kubernetes-version 1.10.8</strong></th>
+</tr>
+</table>
+
+
+Save the output in a json file. To configure kubectl to connect to the cluster issue the following commands
+
+<table bgcolor="#A9A9A9">
+<tr>
+ <th><strong>az aks get-credentials --resource-group sqlbigdatacluster --name kubcluster</strong></th>
+</tr>
+</table>
+
+
+<p align="center">
+  <img width=500 length=125 src='images/pic10.jpg'>
+</p>
+
+You can verify the connectivity/status by issuing the command
+
+<table bgcolor="#A9A9A9">
+<tr>
+ <th><strong>kubectl get nodes</strong></th>
+</tr>
+</table>
+
+<p align="center">
+  <img width=500 length=125 src='images/pic11.jpg'>
+</p>
+
+## Installing SQL 2019 big data cluster on AKS cluster
+
+Now that the AKS cluster has been created and the client machine can connect to it, we will be able to initiate the process of installing SQL 2019 cluster. 
+More details around this can be found [here] (https://docs.microsoft.com/en-us/sql/big-data-cluster/quickstart-big-data-cluster-deploy?view=sqlallproducts-allversions).
+
+You will be able to skip the pre-requisite steps as they have been completed. You start by defining the environment variables. Since the client machine is using windows OS, it is imperative not to 
+use double quotes around the value. Example, the first variable that needs to be set is SET ACCEPT_EULA=Y. Do not put double quotes around Y.
+
+<p align="center">
+  <img width=500 length=125 src='images/pic12.jpg'>
+</p>
+
+Once the environment variables are set issue the command
+
+<table bgcolor="#A9A9A9">
+<tr>
+ <th><strong>mssqlctl create cluster sql2019bigdataclus</strong></th>
+</tr>
+</table>
+
+<p align="center">
+  <img width=500 length=125 src='images/pic12.jpg'>
+</p>
+
+While the SQL 2019 big data cluster is being created, the status of the process can be checked using the following commands
+
+<table bgcolor="#A9A9A9">
+<tr>
+ <th><strong>kubectl get all -n <your-cluster-name>
+kubectl get pods -n <your-cluster-name>
+kubectl get svc -n <your-cluster-name>
+</strong></th>
+</tr>
+</table>
+
+<p align="center">
+  <img width=500 length=125 src='images/pic13.jpg'>
+</p>
+
+When the process completes, you will see the outcome as follows
+
+<p align="center">
+  <img width=500 length=125 src='images/pic14.jpg'>
+</p>
+
+## Connecting to cluster admin portal and big data cluster
+
+After the cluster has been created successfully, one can connect to the cluster admin portal using the external ipaddress of service-proxy-lb and port number 30777. 
+Use the CONTROLLER username and password to login to the cluster admin portal.
+
+<p align="center">
+  <img width=500 length=125 src='images/pic15.jpg'>
+</p>
+
+<p align="center">
+  <img width=500 length=125 src='images/pic16.jpg'>
+</p>
+
+You will be able to find more details around cluster admin portal [here](https://docs.microsoft.com/en-us/sql/big-data-cluster/cluster-admin-portal?view=sqlallproducts-allversions)
+You can obtain the ipaddress of the SQL master instance and the big data cluster using the command
+<table bgcolor="#A9A9A9">
+<tr>
+ <th><strong>
+kubectl get svc service-master-pool-lb -n <your-cluster-name>
+kubectl get svc service-security-lb -n <your-cluster-name>
+</strong></th>
+</tr>
+</table>
+
+You will need to use the external ipaddress for service-master-pool-lb to connect to the SQL master instance. The port number is 31433. 
+To connect to the big data cluster, use the external ipaddress for service-security-lb. The port number is 30443.
+
+<p align="center">
+  <img width=500 length=125 src='images/pic17.jpg'>
+</p>
+
+All the service endpoint could also be found in the cluster admin portal
+
+<p align="center">
+  <img width=500 length=125 src='images/pic18.jpg'>
+</p>
+
+You can use Azure data studio to connect to both the master instance and big data cluster.
+Connecting to the SQL master instance
+
+<p align="center">
+  <img width=500 length=125 src='images/pic19.jpg'>
+</p>
+
+<p align="center">
+  <img width=500 length=125 src='images/pic20.jpg'>
+</p>
+
+When connecting to the big data cluster, pick “SQL big data cluster”.
+
+<p align="center">
+  <img width=500 length=125 src='images/pic21.jpg'>
+</p>
+
+<p align="center">
+  <img width=500 length=125 src='images/pic22.jpg'>
+</p>
+
+## Conclusion
+SQL Server 2019 big data cluster is a great addition to SQL Server’s various offering. 
+This offering has the potential to cater to different personas whether you are a fan of SQL or non-relational data sources such as HDFS/spark.
+
+## Further Reading
+
+You will be able to find more information [here](https://docs.microsoft.com/en-us/sql/big-data-cluster/big-data-cluster-overview?view=sqlallproducts-allversions)
+
+
+
+
