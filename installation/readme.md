@@ -198,7 +198,7 @@ You can verify the connectivity/status by issuing the command
 ## Installing SQL 2019 big data cluster on AKS cluster
 
 Now that the AKS cluster has been created and the client machine can connect to it, we will be able to initiate the process of installing SQL 2019 cluster. 
-More details around this can be found [here] (https://docs.microsoft.com/en-us/sql/big-data-cluster/quickstart-big-data-cluster-deploy?view=sqlallproducts-allversions).
+More details around this can be found [here](https://docs.microsoft.com/en-us/sql/big-data-cluster/quickstart-big-data-cluster-deploy?view=sqlallproducts-allversions).
 
 You will be able to skip the pre-requisite steps as they have been completed. You start by defining the environment variables. Since the client machine is using windows OS, it is imperative not to 
 use double quotes around the value. Example, the first variable that needs to be set is SET ACCEPT_EULA=Y. Do not put double quotes around Y.
