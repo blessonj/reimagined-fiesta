@@ -16,5 +16,5 @@ Once the SQL team approves your request, you will receive a user name and passwo
 Go to the azure portal and create a VM with Windows operating. I use a Windows 10 pro, version 1803 to build my client VM in azure.
 
 <p align="center">
-  <img src='/image/pic1.jpg'>
+  <img src='/images/pic1.jpg'>
 </p>
