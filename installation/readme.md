@@ -1,4 +1,4 @@
-#Getting started with SQL 2019 big data cluster in Azure
+# Getting started with SQL 2019 big data cluster in Azure AKS cluster
 
 ## What is SQL 2019 big data cluster?
 
@@ -18,3 +18,4 @@ Go to the azure portal and create a VM with Windows operating. I use a Windows 1
 <p align="center">
   <img src='images/pic1.jpg'>
 </p>
+
