@@ -76,10 +76,14 @@ You can also find the updated powershell script [here](code/install-kubectl.ps1)
 </tr>
 </table>
 
+<p align="center">
+  <img width=500 length=125 src='images/pic7.jpg'>
+</p>
+
 Another step to do is to add the directory of kubectl into user variable <strong>path</strong>
 
 <p align="center">
-  <img width=500 length=125 src='images/pic6.jpg'>
+  <img width=500 length=125 src='images/pic7.jpg'>
 </p>
 
 If you open a new PowerShell window and execute the command kubectl --help, the command will be recognized.
