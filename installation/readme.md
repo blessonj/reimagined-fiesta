@@ -69,8 +69,79 @@ Your edited code will look like this
 
 In PowerShell go to the directory where Install-kubectl.ps1 is present and execute the command. A download directory needs to be provided for downloading components.
 You can also find the updated powershell script [here](code/install-kubectl.ps1)
+
 <table bgcolor="#A9A9A9">
 <tr>
  <th><strong>.\install-kubectl.ps1 -DownloadLocation "C:\PowerShell_Kubectl"</strong></th>
 </tr>
 </table>
+
+Another step to do is to add the directory of kubectl into user variable <strong>path</strong>
+
+<p align="center">
+  <img width=500 length=125 src='images/pic6.jpg'>
+</p>
+
+If you open a new PowerShell window and execute the command kubectl --help, the command will be recognized.
+
+### Installing mssqlctl
+
+Install the pre-requisites for installing mssqlctl before installing mssqlctl. One will need to install python v3 or greater and pip3. 
+Python can be downloaded from [here] (https://www.python.org/downloads/)
+
+pip3 gets installed automatically if Python 2 >=2.7.9 or Python 3 >=3.4 is used.
+Once installation is complete, issue the following command in a new PowerShell window.
+
+<table bgcolor="#A9A9A9">
+<tr>
+ <th><strong>pip3 install --extra-index-url https://private-repo.microsoft.com/python/ctp-2.1 mssqlctl</strong></th>
+</tr>
+</table>
+
+<p align="center">
+  <img width=500 length=125 src='images/pic7.jpg'>
+</p>
+
+### Installing Azure Data Studio and SQL 2019 extension
+
+Download Azure Data studio and use the GUI based approach to install the tool [here](https://docs.microsoft.com/en-us/sql/azure-data-studio/download?view=sqlallproducts-allversions)
+
+The steps to download and install the SQL 2019 extension can be found [here](https://docs.microsoft.com/en-us/sql/azure-data-studio/sql-server-2019-extension?view=sqlallproducts-allversions)
+
+
+### Installing Azure CLI 2.0
+
+Optionally, if you are planning to use Azure CLI to create the AKS cluster in Azure, you will need to install Azure CLI 2.0. 
+The installation steps and msi can be found [here](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows?view=azure-cli-latest)
+
+#### Now, all the required components for the client machine have been installed.
+
+## Overview of AKS cluster and SQL 2019 big data cluster
+
+The SQL big data cluster is a cluster of Linux containers orchestrated by [Kubernetes](https://kubernetes.io/docs/concepts/). 
+Kubernetes is an open source container orchestrator and helps scale according to the workload requirements.
+
+The three important terminologies:
+
+<table bgcolor="#A9A9A9">
+<tr>
+ <td>Cluster</td>
+ <td>A combination of master node and worker nodes form the Kubernetes cluster. 
+     The master node distributes work to the worker nodes and monitors the health of worker nodes. A cluster can have a combination of physical or virtual machines.</td>
+</tr>
+<tr>
+ <td>Node</td>
+ <td>A node could be a physical or virtual machine. A node hosts the containerized application</td>
+</tr>
+<tr>
+ <td>Pod</td>
+ <td>A pod is a logical grouping of containerized applications and associated resources. A node can host more than one pod.</td>
+</tr>
+</table>
+
+
+Below is an example of a Kubernetes cluster
+
+<p align="center">
+  <img width=500 length=125 src='images/pic8.jpg'>
+</p>
