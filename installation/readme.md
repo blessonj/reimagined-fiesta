@@ -91,7 +91,7 @@ If you open a new PowerShell window and execute the command kubectl --help, the 
 ### Installing mssqlctl
 
 Install the pre-requisites for installing mssqlctl before installing mssqlctl. One will need to install python v3 or greater and pip3. 
-Python can be downloaded from [here] (https://www.python.org/downloads/)
+Python can be downloaded from [here](https://www.python.org/downloads/)
 
 pip3 gets installed automatically if Python 2 >=2.7.9 or Python 3 >=3.4 is used.
 Once installation is complete, issue the following command in a new PowerShell window.
