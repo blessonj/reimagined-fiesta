@@ -77,7 +77,7 @@ You can also find the updated powershell script [here](code/install-kubectl.ps1)
 </table>
 
 <p align="center">
-  <img width=500 length=125 src='images/pic7.jpg'>
+  <img width=500 length=125 src='images/pic6.jpg'>
 </p>
 
 Another step to do is to add the directory of kubectl into user variable <strong>path</strong>
@@ -103,7 +103,7 @@ Once installation is complete, issue the following command in a new PowerShell w
 </table>
 
 <p align="center">
-  <img width=500 length=125 src='images/pic7.jpg'>
+  <img width=500 length=125 src='images/pic8.jpg'>
 </p>
 
 ### Installing Azure Data Studio and SQL 2019 extension
@@ -128,16 +128,16 @@ Kubernetes is an open source container orchestrator and helps scale according to
 The three important terminologies:
 
 <table bgcolor="#A9A9A9">
-<tr>
+<tr bgcolor="#A9A9A9">
  <td>Cluster</td>
  <td>A combination of master node and worker nodes form the Kubernetes cluster. 
      The master node distributes work to the worker nodes and monitors the health of worker nodes. A cluster can have a combination of physical or virtual machines.</td>
 </tr>
-<tr>
+<tr bgcolor="#A9A9A9">
  <td>Node</td>
  <td>A node could be a physical or virtual machine. A node hosts the containerized application</td>
 </tr>
-<tr>
+<tr bgcolor="#A9A9A9">
  <td>Pod</td>
  <td>A pod is a logical grouping of containerized applications and associated resources. A node can host more than one pod.</td>
 </tr>
