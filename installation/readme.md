@@ -156,10 +156,10 @@ The <b>control plane</b> provides management and security. The master instance o
 responsible for computation. Finally, the <b>data plane</b> is responsible for data persistence and caching. It contains the SQL data pool, and storage pool.
 
 
-## Installing AKS cluster
+### Installing AKS cluster
 
 You will be able to install the AKS cluster using either CLI or azure portal. The steps to install AKS cluster using CLI is provided. Use command prompt to execute the CLI commands.
-The detailed steps can be found [here](https://docs.microsoft.com/en-us/sql/big-data-cluster/deploy-on-aks?view=sqlallproducts-allversions)
+The detailed steps can be found [here](https://docs.microsoft.com/en-us/sql/big-data-cluster/deploy-on-aks?view=sqlallproducts-allversions).
 
 The pre-requisite steps can be skipped as they have been completed on the client machine. The cluster I created has 4 nodes and the command is as follows
 
@@ -216,7 +216,7 @@ Once the environment variables are set issue the command
 </table>
 
 <p align="center">
-  <img width=500 length=125 src='images/pic12.jpg'>
+  <img width=500 length=125 src='images/pic13.jpg'>
 </p>
 
 While the SQL 2019 big data cluster is being created, the status of the process can be checked using the following commands
@@ -231,13 +231,13 @@ kubectl get svc -n <your-cluster-name>
 </table>
 
 <p align="center">
-  <img width=500 length=125 src='images/pic13.jpg'>
+  <img width=500 length=125 src='images/pic14.jpg'>
 </p>
 
 When the process completes, you will see the outcome as follows
 
 <p align="center">
-  <img width=500 length=125 src='images/pic14.jpg'>
+  <img width=500 length=125 src='images/pic15.jpg'>
 </p>
 
 ## Connecting to cluster admin portal and big data cluster
@@ -246,11 +246,11 @@ After the cluster has been created successfully, one can connect to the cluster 
 Use the CONTROLLER username and password to login to the cluster admin portal.
 
 <p align="center">
-  <img width=500 length=125 src='images/pic15.jpg'>
+  <img width=500 length=125 src='images/pic16.jpg'>
 </p>
 
 <p align="center">
-  <img width=500 length=125 src='images/pic16.jpg'>
+  <img width=500 length=125 src='images/pic17.jpg'>
 </p>
 
 You will be able to find more details around cluster admin portal [here](https://docs.microsoft.com/en-us/sql/big-data-cluster/cluster-admin-portal?view=sqlallproducts-allversions)
@@ -268,34 +268,34 @@ You will need to use the external ipaddress for service-master-pool-lb to connec
 To connect to the big data cluster, use the external ipaddress for service-security-lb. The port number is 30443.
 
 <p align="center">
-  <img width=500 length=125 src='images/pic17.jpg'>
+  <img width=500 length=125 src='images/pic18.jpg'>
 </p>
 
 All the service endpoint could also be found in the cluster admin portal
 
 <p align="center">
-  <img width=500 length=125 src='images/pic18.jpg'>
+  <img width=500 length=125 src='images/pic19.jpg'>
 </p>
 
 You can use Azure data studio to connect to both the master instance and big data cluster.
 Connecting to the SQL master instance
 
 <p align="center">
-  <img width=500 length=125 src='images/pic19.jpg'>
-</p>
-
-<p align="center">
   <img width=500 length=125 src='images/pic20.jpg'>
 </p>
-
-When connecting to the big data cluster, pick “SQL big data cluster”.
 
 <p align="center">
   <img width=500 length=125 src='images/pic21.jpg'>
 </p>
 
+When connecting to the big data cluster, pick “SQL big data cluster”.
+
 <p align="center">
   <img width=500 length=125 src='images/pic22.jpg'>
+</p>
+
+<p align="center">
+  <img width=500 length=125 src='images/pic23.jpg'>
 </p>
 
 ## Conclusion
