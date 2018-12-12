@@ -16,14 +16,14 @@ Once the SQL team approves your request, you will receive a user name and passwo
 Go to the azure portal and create a VM with Windows operating. I use a Windows 10 pro, version 1803 to build my client VM in azure.
 
 <p align="center">
-  <img width=400 length=125 src='images/pic1.jpg'>
+  <img width=500 length=125 src='images/pic1.jpg'>
 </p>
 
 You can find details about how to create a virtual machine in azure [here](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-portal). 
 Once the validation is complete click on the “create” button to initiate the creation VM creation process.
 
 <p align="center">
-  <img width=400 length=125 src='images/pic2.jpg'>
+  <img width=500 length=125 src='images/pic2.jpg'>
 </p>
 
 ## Install pre-requisites on the client machine (Azure VM)
@@ -37,8 +37,8 @@ If you intend to use Azure CLI to install AKS cluster, this will also need to be
 
 In the client machine open PowerShell window and paste the command
 
-<table bgcolor="#D3D3D3">
-<tr>
+<table>
+<tr bgcolor="#D3D3D3">
  <th><strong>Install-Script -Name install-kubectl -Scope CurrentUser -Force</strong></th>
 </tr>
 </table>
