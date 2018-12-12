@@ -223,7 +223,8 @@ While the SQL 2019 big data cluster is being created, the status of the process 
 
 <table bgcolor="#A9A9A9">
 <tr>
- <th><strong>kubectl get all -n &lt;your-cluster-name&gt;<br/>
+<th><strong>
+kubectl get all -n &lt;your-cluster-name&gt;<br/>
 kubectl get pods -n &lt;your-cluster-name&gt;<br/>
 kubectl get svc -n &lt;your-cluster-name&gt;<br/>
 </strong></th>
