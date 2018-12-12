@@ -1,4 +1,4 @@
-# Getting started with SQL 2019 big data cluster in Azure AKS cluster
+# Getting started with SQL 2019 big data cluster in Azure
 
 ## What is SQL 2019 big data cluster?
 
@@ -16,6 +16,6 @@ Once the SQL team approves your request, you will receive a user name and passwo
 Go to the azure portal and create a VM with Windows operating. I use a Windows 10 pro, version 1803 to build my client VM in azure.
 
 <p align="center">
-  <img width=600 length=250 src='images/pic1.jpg'>
+  <img width=650 length=200 src='images/pic1.jpg'>
 </p>
 
