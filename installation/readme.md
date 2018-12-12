@@ -253,6 +253,12 @@ Use the CONTROLLER username and password to login to the cluster admin portal.
   <img width=500 length=125 src='images/pic17.jpg'>
 </p>
 
+Showing the status
+
+<p align="center">
+  <img width=500 length=125 src='images/pic18.jpg'>
+</p>
+
 You will be able to find more details around cluster admin portal [here](https://docs.microsoft.com/en-us/sql/big-data-cluster/cluster-admin-portal?view=sqlallproducts-allversions)
 You can obtain the ipaddress of the SQL master instance and the big data cluster using the command
 <table bgcolor="#A9A9A9">
@@ -268,34 +274,34 @@ You will need to use the external ipaddress for service-master-pool-lb to connec
 To connect to the big data cluster, use the external ipaddress for service-security-lb. The port number is 30443.
 
 <p align="center">
-  <img width=500 length=125 src='images/pic18.jpg'>
+  <img width=500 length=125 src='images/pic19.jpg'>
 </p>
 
 All the service endpoint could also be found in the cluster admin portal
 
 <p align="center">
-  <img width=500 length=125 src='images/pic19.jpg'>
+  <img width=500 length=125 src='images/pic20.jpg'>
 </p>
 
 You can use Azure data studio to connect to both the master instance and big data cluster.
 Connecting to the SQL master instance
 
 <p align="center">
-  <img width=500 length=125 src='images/pic20.jpg'>
-</p>
-
-<p align="center">
   <img width=500 length=125 src='images/pic21.jpg'>
 </p>
-
-When connecting to the big data cluster, pick “SQL big data cluster”.
 
 <p align="center">
   <img width=500 length=125 src='images/pic22.jpg'>
 </p>
 
+When connecting to the big data cluster, pick “SQL big data cluster”.
+
 <p align="center">
   <img width=500 length=125 src='images/pic23.jpg'>
+</p>
+
+<p align="center">
+  <img width=500 length=125 src='images/pic24.jpg'>
 </p>
 
 ## Conclusion
