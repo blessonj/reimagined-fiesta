@@ -38,7 +38,7 @@ If you intend to use Azure CLI to install AKS cluster, this will also need to be
 In the client machine open PowerShell window and paste the command
 
 <table>
-<tr bgcolor="#D3D3D3">
+<tr bgcolor="#808080">
  <th><strong>Install-Script -Name install-kubectl -Scope CurrentUser -Force</strong></th>
 </tr>
 </table>
