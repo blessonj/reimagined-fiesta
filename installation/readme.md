@@ -19,3 +19,26 @@ Go to the azure portal and create a VM with Windows operating. I use a Windows 1
   <img width=500 length=150 src='images/pic1.jpg'>
 </p>
 
+You can find details about how to create a virtual machine in azure [here](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-portal). 
+Once the validation is complete click on the “create” button to initiate the creation VM creation process.
+
+<p align="center">
+  <img width=500 length=150 src='images/pic2.jpg'>
+</p>
+
+## Install pre-requisites on the client machine (Azure VM)
+
+To use AKS cluster, which is one of the many locations where SQL 2019 big data cluster can be installed, we will need to install [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl) and mssqlctl CLI tool to 
+manage SQL Server big data cluster. Python v3 (or greater) and pip3 are to be installed before installing mssqlctl.In addition to this, it will be good to 
+install the [Azure Data Studio and SQL Server 2019 extension](https://docs.microsoft.com/en-us/sql/big-data-cluster/deploy-big-data-tools?view=sqlallproducts-allversions). 
+If you intend to use Azure CLI to install AKS cluster, this will also need to be installed on the client machine that was created.
+
+### Installing kubectl  
+
+In the client machine open PowerShell window and paste the command
+
+<table>
+<tr>
+ <th><strong>Install-Script -Name install-kubectl -Scope CurrentUser -Force</strong></th>
+</tr>
+</table>
