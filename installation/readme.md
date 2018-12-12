@@ -37,8 +37,40 @@ If you intend to use Azure CLI to install AKS cluster, this will also need to be
 
 In the client machine open PowerShell window and paste the command
 
-<table style='color:grey'>
+<table bgcolor="#A9A9A9">
 <tr>
  <th><strong>Install-Script -Name install-kubectl -Scope CurrentUser -Force</strong></th>
+</tr>
+</table>
+
+<p align="center">
+  <img width=500 length=125 src='images/pic3.jpg'>
+</p>
+
+The script and associated artefacts are downloaded to the user’s documents folder.
+
+<p align="center">
+  <img width=500 length=125 src='images/pic4.jpg'>
+</p>
+
+You will need to make a small edit to the “install-kubectl.ps1” script to get it running. This is to add TLS 1.2. Add the following code just above the $uri statement.
+
+<table bgcolor="#A9A9A9">
+<tr>
+ <th><strong>[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::tls12</strong></th>
+</tr>
+</table>
+
+Your edited code will look like this
+
+<p align="center">
+  <img width=500 length=125 src='images/pic5.jpg'>
+</p>
+
+In PowerShell go to the directory where Install-kubectl.ps1 is present and execute the command. A download directory needs to be provided for downloading components.
+You can also find the updated powershell script [here](code/install-kubectl.ps1)
+<table bgcolor="#A9A9A9">
+<tr>
+ <th><strong>.\install-kubectl.ps1 -DownloadLocation "C:\PowerShell_Kubectl"</strong></th>
 </tr>
 </table>
